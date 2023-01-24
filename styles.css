@@ -1,0 +1,24 @@
+div.btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.btn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#rock, 
+#paper, 
+#scissors {
+    width: 250px;
+    height: 250px;
+    border-color: black;
+    margin-bottom: 10px;
+}
+
+div#results,
+div#score {
+    position: relative;
+}

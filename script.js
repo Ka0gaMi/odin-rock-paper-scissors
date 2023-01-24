@@ -13,6 +13,8 @@
     // Return the string corresponding to the outcome
 //
 
+let div = document.querySelector("#results")
+let div2 = document.querySelector("#score")
 const choice = ["rock", "paper", "scissors"]
 
 function getComputerChoice() {
@@ -20,21 +22,38 @@ function getComputerChoice() {
     return randomComputerSelection;
 }
 
+let scorePlayer = 0;
+let scoreComputer = 0;
+
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase()
-    if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "rock") {
-        return `You Win! ${playerSelection} beats ${computerSelection}`
-    } else if (playerSelection === computerSelection) {
-        return "It's a tie!"
-    } else {
-        return `You lose! ${computerSelection} beats ${playerSelection}`
+    if (scorePlayer !== 5 && scoreComputer !== 5) {
+        if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "rock") {
+            scorePlayer++
+            div.textContent = `You Win! ${playerSelection} beats ${computerSelection}`
+            div2.textContent = `Current score: Player ${scorePlayer} - Computer ${scoreComputer}`
+        } else if (playerSelection === computerSelection) {
+            div.textContent = `It's a tie!`
+            div2.textContent = `Current score: Player ${scorePlayer} - Computer ${scoreComputer}`
+        } else {
+            scoreComputer++
+            div.textContent = `You lose! ${computerSelection} beats ${playerSelection}`
+            div2.textContent = `Current score: Player ${scorePlayer} - Computer ${scoreComputer}`
+        }
+    } else if (scorePlayer === 5 || scoreComputer === 5) {
+        if (scorePlayer === 5) {
+            return div.textContent = "Player Wins!";
+        } else {
+            return div.textContent = "Computer Wins!"
+        }
     }
 }
 
-const playerSelection = "Rock"
-
-function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound(playerSelection, getComputerChoice()))
-    }
-}
+document.getElementById('rock').addEventListener("click", () => playRound("rock", getComputerChoice()));
+document.getElementById('paper').addEventListener("click", () => playRound("rock", getComputerChoice()));
+document.getElementById('scissors').addEventListener("click", () => playRound("rock", getComputerChoice()));
+document.getElementById('reset').addEventListener("click", function(){
+    scorePlayer = 0;
+    scoreComputer = 0;
+    div.textContent = "";
+    div2.textContent = "New game, start playing!";
+});
