@@ -4,6 +4,7 @@ html, body {
     background-color: #630b0e;
     color: aliceblue;
     font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 div.btns {
@@ -80,4 +81,17 @@ img#image {
     width: 100%;
     object-fit: contain;
     border-radius: 50%;
+}
+
+/*
+    Making a header
+*/
+
+div.title {
+    text-align: center;
+    background-color: #0B6360;
+}
+
+h1 {
+    margin: 0
 }
