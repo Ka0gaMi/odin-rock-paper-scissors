@@ -1,12 +1,22 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: #630b0e;
+    color: aliceblue;
+    font-size: 40px;
+}
+
 div.btns {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 div.btn {
     display: flex;
     justify-content: space-evenly;
+    padding: 0;
 }
 
 #rock, 
@@ -16,9 +26,58 @@ div.btn {
     height: 250px;
     border-color: black;
     margin-bottom: 10px;
+    padding: 0;
+    margin: 10px;
+    border-width: 5px;
+    border-radius: 50%;
 }
 
 div#results,
 div#score {
     position: relative;
+}
+
+p {
+    text-align: center;
+    margin: 20px;
+}
+
+#reset {
+    width: 246px;
+    height: 50px;
+    border-radius: 50px;
+    border: 5px solid black;
+}
+
+/* 
+    Setting up scoreboard
+*/
+
+div.scoreboard {
+    display: flex;
+    justify-content: center;
+}
+
+div.playerscore,
+div.computerscore {
+    width: 80px;
+    height: 100px;
+    background-color: aliceblue; 
+    margin: 5px; 
+    border: 5px solid black;
+    border-radius: 15px;
+    color: black;
+    text-align: center;
+    font-size: 90px;
+}
+
+/* 
+    Setting the images to auto-fit
+*/
+
+img#image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 50%;
 }

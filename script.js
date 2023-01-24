@@ -13,8 +13,11 @@
     // Return the string corresponding to the outcome
 //
 
-let div = document.querySelector("#results")
-let div2 = document.querySelector("#score")
+let div = document.querySelector("#results");
+let playerScore = document.querySelector("#playerscore");
+let computerScore = document.querySelector('#computerscore');
+let explanation = document.querySelector('#explanation');
+
 const choice = ["rock", "paper", "scissors"]
 
 function getComputerChoice() {
@@ -29,15 +32,22 @@ function playRound(playerSelection, computerSelection) {
     if (scorePlayer !== 5 && scoreComputer !== 5) {
         if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "rock") {
             scorePlayer++
-            div.textContent = `You Win! ${playerSelection} beats ${computerSelection}`
-            div2.textContent = `Current score: Player ${scorePlayer} - Computer ${scoreComputer}`
+            div.textContent = `You Win!`;
+            explanation.textContent = `${playerSelection} beats ${computerSelection}`;
+            playerScore.textContent = `${scorePlayer}`;
+            computerScore.textContent = `${scoreComputer}`;
+
         } else if (playerSelection === computerSelection) {
             div.textContent = `It's a tie!`
-            div2.textContent = `Current score: Player ${scorePlayer} - Computer ${scoreComputer}`
+            playerScore.textContent = `${scorePlayer}`;
+            computerScore.textContent = `${scoreComputer}`;
+
         } else {
             scoreComputer++
-            div.textContent = `You lose! ${computerSelection} beats ${playerSelection}`
-            div2.textContent = `Current score: Player ${scorePlayer} - Computer ${scoreComputer}`
+            div.textContent = `You lose!`;
+            explanation.textContent = `${computerSelection} beats ${playerSelection}`;
+            playerScore.textContent = `${scorePlayer}`;
+            computerScore.textContent = `${scoreComputer}`;
         }
     } else if (scorePlayer === 5 || scoreComputer === 5) {
         if (scorePlayer === 5) {
@@ -55,5 +65,7 @@ document.getElementById('reset').addEventListener("click", function(){
     scorePlayer = 0;
     scoreComputer = 0;
     div.textContent = "";
-    div2.textContent = "New game, start playing!";
+    explanation.textContent = "New game, start playing!";
+    playerScore.textContent = `${scorePlayer}`;
+    computerScore.textContent = `${scoreComputer}`
 });

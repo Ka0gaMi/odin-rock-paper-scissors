@@ -8,17 +8,23 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="results">Start playing!</p>
+    <p id="explanation"></p>
+    <div class="scoreboard">
+        <div id="playerscore" class="playerscore"></div>
+        <div id="computerscore" class="computerscore"></div>  
+    </div>
+    
+
     <div class="btns">
         <div class="btn">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+            <button id="rock"><img id="image" src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296854_1280.png" alt="Rock" loading="lazy" width="240" height="240"></button>
+            <button id="paper"><img id="image" src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296855_1280.png" alt="Paper" loading="lazy" width="240" height="240"></button>
+            <button id="scissors"><img id="image" src="https://cdn.pixabay.com/photo/2014/03/25/15/26/rock-paper-scissors-296853_1280.png" alt="Scissors" loading="lazy" width="240" height="240"></button>
         </div>
         <button id="reset">Reset</button>
     </div>
-    <div id="results">Start playing!</div>
-    <div id="score"></div>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
