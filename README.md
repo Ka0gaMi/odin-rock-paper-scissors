@@ -1,3 +1,3 @@
 # odin-rock-paper-scissors
 
-Used JS DOM manipulation to create Etch A Sketch game.
+Used HTML, CSS and JS to create Rock Paper Scissors game.
